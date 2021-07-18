@@ -1,19 +1,18 @@
 version: 0.2
+
 phases:
   install:
     runtime-versions:
       java: corretto8
-  pre_build:
-    commands:
-    - echo In the pre_build phase...
   build:
     commands:
-    - echo Build started on
+      - echo Build started on `date`
+      - mvn clean
   post_build:
     commands:
-    - echo Build completed
-    - mvn package
-    - mv target/webportal-service.war
- artifacts:
+      - echo Build completed on `date`
+      - mvn package
+artifacts:
   files:
-  - webportal-service.war
+    - target/webportal-service.war
+  discard-paths: yes
