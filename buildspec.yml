@@ -14,5 +14,5 @@ phases:
       - mvn package
 artifacts:
   files:
-    - target/webportal-service.war
+    - target/webportal-service.jar
   discard-paths: yes
